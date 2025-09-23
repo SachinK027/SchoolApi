@@ -81,4 +81,52 @@ This allows assigning multiple roles per user and maintaining domain-specific da
 ---
 
 ## Project Structure
+SchoolApi/
+│
+├── Controllers/ # API controllers (AuthController, StudentController)
+├── CustomMiddleware/ # Custom middleware classes (e.g., ExceptionMiddleware)
+├── Data/ # EF DbContext and database-related configurations
+├── DTOs/ # Data Transfer Objects for API input/output
+├── Helpers/ # Helper classes such as Mappers and Encryption utilities
+├── Interfaces/ # Service interfaces
+├── Logs/ # Application logs (if configured)
+├── Models/ # EF Core entity classes mapped from database tables
+├── Services/ # Business logic implementations (AuthService, StudentService)
+├── appsettings.json # Configuration file for database connection, JWT settings, etc.
+├── Program.cs # Application entry point and service configuration
+└── SchoolApi.http # HTTP requests file for testing APIs (optional)
 
+## Setup and Installation
+
+### Prerequisites
+
+- [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)  
+- [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)  
+- IDE like Visual Studio 2022 or VS Code
+
+## Contributing
+
+Contributions are highly appreciated! Please follow these steps:
+
+Fork the repository
+
+Create a feature branch (git checkout -b feature/your-feature)
+
+Commit your changes (git commit -m 'Add some feature')
+
+Push to your branch (git push origin feature/your-feature)
+
+Open a Pull Request
+
+Please ensure code style consistency and add tests for new features.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE
+ file for details.
+
+## Contact
+
+For questions or support, please contact:
+Name – Sachin Kanzariya
+GitHub: https://github.com/SachinK027
