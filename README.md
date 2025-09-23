@@ -1,6 +1,6 @@
 # SchoolApi
 
-A comprehensive RESTful Web API built with **.NET 8**, implementing a **Database-First** approach using Entity Framework Core. The API manages a school system with features including user authentication, role-based authorization, and student/course management.
+A comprehensive RESTful Web API built with **.NET 8**, implementing a **CRUD operation using Database-First** approach using Entity Framework Core. The API manages a school system with features including user authentication, role-based authorization, and student/course management.
 
 ---
 
