@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SchoolApi.DTOs;
 using SchoolApi.Interfaces;
@@ -7,6 +8,7 @@ using SchoolApi.Services;
 
 namespace SchoolApi.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class StudentController : ControllerBase
