@@ -1,0 +1,34 @@
+name: .NET CI Pipeline
+
+# When should this workflow run?
+on:
+  push:
+    branches: [main] # Run on pushes to the main branch
+  pull_request:
+    branches: [main] # Run on pull requests targeting main branch
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # Use latest Ubuntu VM for running jobs
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3 # Check out your repository code so workflow can use it
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "8.0.x" # Set .NET SDK version (change to 7.0.x if needed)
+
+      - name: Restore dependencies
+        run: dotnet restore # Restore NuGet packages (download dependencies)
+
+      - name: Build solution
+        run:
+          dotnet build --no-restore --configuration Release
+          # Build your project in Release mode without restoring again
+
+      - name: Run tests
+        run:
+          dotnet test --no-build --verbosity normal
+          # Run all tests in solution without rebuilding again
