@@ -3,9 +3,9 @@ name: .NET CI Pipeline
 # When should this workflow run?
 on:
   push:
-    branches: [main] # Run on pushes to the main branch
+    branches: [master] # Run on pushes to the master  branch
   pull_request:
-    branches: [main] # Run on pull requests targeting main branch
+    branches: [master] # Run on pull requests targeting master  branch
 
 jobs:
   build-and-test:
