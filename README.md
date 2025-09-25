@@ -123,7 +123,7 @@ SchoolApi/
 
 ## Setup and Installation
 
-### Prerequisites
+## Prerequisites
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)  
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)  
