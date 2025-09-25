@@ -94,7 +94,6 @@ The database schema includes:
 
 ## Project Structure
 
-```plaintext
 SchoolApi/
 │
 ├── Controllers/                # API Controllers
