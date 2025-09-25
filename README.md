@@ -8,47 +8,47 @@ A comprehensive RESTful Web API built with **.NET 8**, showcasing multiple data 
 
 - [Overview](#overview)  
 - [Features](#features)  
-- [Data Access Approaches](#data-access-approaches)  
 - [Technologies](#technologies)  
 - [Database Schema](#database-schema)  
 - [Project Structure](#project-structure)  
 - [Setup and Installation](#setup-and-installation)  
 - [Running the Application](#running-the-application)  
+- [Testing](#testing)  
+- [Continuous Integration](#continuous-integration)  
 - [Authentication & Authorization](#authentication--authorization)  
 - [API Endpoints](#api-endpoints)  
 - [Contributing](#contributing)  
 - [License](#license)  
-
 ---
 
 ## Overview
 
-This API provides core functionalities for a school management system, including:
+This API provides core functionalities for a school management system:
 
 - User registration with role assignment (Student, Teacher, Admin)  
 - Secure login with JWT token generation and validation  
-- Role-based authorization restricting access to sensitive endpoints  
-- Management of Students, Courses, and Enrollments  
-- Centralized error handling via custom middleware  
-- Password encryption and secure authentication
-
-Uniquely, this project demonstrates **three distinct data access approaches** in the same codebase, allowing for comparison and learning:
-
-- **Entity Framework Core (Database-First)**: Auto-generated models and DbContext based on an existing SQL Server database schema.  
-- **ADO.NET**: Low-level, direct database interaction using `SqlConnection`, `SqlCommand`, and `SqlDataReader` for raw SQL execution and manual data mapping.  
-- **Dapper**: Lightweight micro-ORM for efficient and simple object mapping with raw SQL queries.
+- Role-based authorization to restrict access to specific endpoints  
+- Student entity management linked with user authentication  
+- Course and Enrollment management (extendable)  
+- Data access implemented with multiple approaches:  
+  - **Database-First** via Entity Framework Core  
+  - **ADO.NET** for low-level database operations  
+  - **Dapper** for lightweight ORM-style data access  
+- Error handling via custom middleware  
+- Password encryption for security  
 
 ---
 
 ## Features
 
-- **User Management**: Registration, login, role assignment  
-- **JWT Authentication**: Secure token-based access control  
-- **Role-Based Authorization**: Granular endpoint protection based on roles  
-- **Student & Course Management**: Full CRUD support  
-- **Multiple Data Access Approaches**: EF Core, ADO.NET, and Dapper implemented via separate controllers  
-- **Custom Middleware**: Error handling and logging support  
-- **Password Encryption**: Secure storage of user credentials  
+- **User Management**: Register, login, assign roles.  
+- **JWT Authentication**: Secure token-based authentication.  
+- **Role-Based Access Control**: Authorization enforced per role.  
+- **Multiple Data Access Approaches**: EF Core, ADO.NET, and Dapper in separate controllers to demonstrate various methods.  
+- **Student Profiles**: Linked to Users through foreign key relationships.  
+- **Custom Middleware**: For consistent error handling and logging.  
+- **Unit Testing**: Implemented with xUnit framework for robust testing.  
+- **Continuous Integration**: GitHub Actions workflows automate build, test, and deployment processes.  
 
 ---
 
@@ -63,18 +63,19 @@ Uniquely, this project demonstrates **three distinct data access approaches** in
 Each approach is implemented in its own controller to clearly separate concerns and allow easy testing and comparison.
 
 ---
-
 ## Technologies
 
 - **.NET 8** (ASP.NET Core Web API)  
 - **Entity Framework Core** (Database-First)  
-- **ADO.NET** (System.Data.SqlClient)  
-- **Dapper** (Micro-ORM)  
+- **ADO.NET**  
+- **Dapper**  
 - **SQL Server**  
 - **JWT (JSON Web Tokens)** for authentication  
+- **xUnit** for unit testing  
+- **GitHub Actions** for CI/CD pipelines  
 - **C# 12**  
-- Dependency Injection and Middleware pipeline  
-- Visual Studio / VS Code  
+- **Dependency Injection & Middleware**  
+- **Visual Studio / VS Code** for development 
 
 ---
 
@@ -111,6 +112,13 @@ SchoolApi/
 ├── appsettings.json           # Configurations (DB connection, JWT, etc.)
 ├── Program.cs                 # App startup and DI configuration
 └── SchoolApi.http             # HTTP request collections for testing APIs
+
+## Testing
+
+- The solution includes **xUnit** test projects covering core service logic and controllers.  
+- Run tests using your IDE test runner or the command line:  
+  ```bash
+  dotnet test
 
 
 ## Setup and Installation
