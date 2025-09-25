@@ -28,6 +28,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
 // JWT Token Configuration
 var key = Encoding.UTF8.GetBytes(Convert.ToString(builder.Configuration["JwtSettings:Key"]));
